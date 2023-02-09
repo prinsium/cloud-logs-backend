@@ -1,5 +1,5 @@
 const connectToMongo = require('./db');
-// connectToMongo();
+connectToMongo();
 
 const express = require('express')
 const app = express()
@@ -9,17 +9,17 @@ app.use(express.json())
 
 app.use('/api/auth', require('./routes/auth'))
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
-const start = async ()=> {
-  try{
-    await connectToMongo();
-    app.listen(port, () => {
-      console.log(`Example app listening on port ${port}`)
-    });
-  } catch (error){
-    console.log(error);
-  }
-}
+// const start = async ()=> {
+//   try{
+//     await connectToMongo();
+//     app.listen(port, () => {
+//       console.log(`Example app listening on port ${port}`)
+//     });
+//   } catch (error){
+//     console.log(error);
+//   }
+// }
