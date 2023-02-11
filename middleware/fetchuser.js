@@ -3,7 +3,7 @@ const JWT_SECRET="primus@b6m$pr";
 
 const fetchuser= (req, res, next)=>{
     //getting user from JWT token and adding user id to req object
-    const token = req.header("auth-token");
+    const token = req.header('auth-token');
     if(!token){
         res.status(401).send({error: "invalid token"});
     }

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb://127.0.0.1:27017";
+const mongoURI = "mongodb://127.0.0.1:27017/cloud-logs?readPreference=primary&directConnection=true";
+
 
 // const connectToMongo = ()=>{
 //     mongoose.connect(mongoURI, ()=>{
