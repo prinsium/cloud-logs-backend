@@ -1,16 +1,9 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb://127.0.0.1:27017/cloud-logs?readPreference=primary&directConnection=true";
-
-
-// const connectToMongo = ()=>{
-//     mongoose.connect(mongoURI, ()=>{
-//         console.log("connected to mongoose successfully")
-//     })
-// }
-
+require('dotenv').config()
+// const mongoURI = process.env.MONGO_URI
 
 const connectToMongo = ()=>{
-    mongoose.connect(mongoURI).then(()=>{
+    mongoose.connect(process.env.MONGO_URI).then(()=>{
         console.log("connected to mongoose successfully")
     }).catch((err)=> console.log(err));
 };
